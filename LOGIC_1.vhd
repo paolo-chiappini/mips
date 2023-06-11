@@ -13,7 +13,7 @@ entity LOGIC_1 is
     );
 end LOGIC_1;
 
-architecture STRUCT of LOGIC_1 is
+architecture RTL of LOGIC_1 is
     signal TEMP_A : std_logic; 
     signal TEMP_B : std_logic; 
 begin
@@ -30,5 +30,5 @@ begin
     A_AND_B <= TEMP_A and TEMP_B; 
     A_OR_B  <= TEMP_A or TEMP_B; 
     A_XOR_B <= TEMP_A xor TEMP_B; 
-end STRUCT;
+end RTL;
 
