@@ -5,8 +5,7 @@ USE ieee.std_logic_1164.ALL;
 END TB_CONTROL_UNIT;
  
 ARCHITECTURE behavior OF TB_CONTROL_UNIT IS 
- 
-    -- Component Declaration for the Unit Under Test (UUT)
+
  
     COMPONENT CONTROL_UNIT
     PORT(
@@ -52,7 +51,6 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
  
 BEGIN
  
-	-- Instantiate the Unit Under Test (UUT)
    uut: CONTROL_UNIT PORT MAP (
           OPCODE => OPCODE,
           FUNCT => FUNCT,
@@ -76,7 +74,7 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin	
-		-- sll
+		-- setup
 		OPCODE <= (others => '0');
       FUNCT  <= (others => '0');
       wait for 20 ns;
@@ -85,8 +83,125 @@ BEGIN
 		OPCODE <= (others => '0');
       FUNCT  <= "100000";
       wait for 20 ns;	
-      -- insert stimulus here 
-		-- fare tutti i test delle operazioni
+		
+		-- sub
+		OPCODE <= (others => '0');
+      FUNCT  <= "100010";
+      wait for 20 ns;
+
+		-- addiu
+		OPCODE <= "001000";
+      FUNCT  <= "000000";
+      wait for 20 ns;
+		
+		-- and
+		OPCODE <= (others => '0');
+      FUNCT  <= "100100";
+      wait for 20 ns;
+		
+		-- or
+		OPCODE <= (others => '0');
+      FUNCT  <= "100101";
+      wait for 20 ns;
+		
+		-- nor
+		OPCODE <= (others => '0');
+      FUNCT  <= "100111";
+      wait for 20 ns;
+		
+		-- xor
+		OPCODE <= (others => '0');
+      FUNCT  <= "100110";
+      wait for 20 ns;
+		
+		-- andi
+		OPCODE <= "001100";
+      FUNCT  <= "100110";
+      wait for 20 ns;
+		
+		-- ori
+		OPCODE <= "001101";
+      FUNCT  <= "000000";
+      wait for 20 ns;
+		
+		-- xori
+		OPCODE <= "001110";
+      FUNCT  <= "100110";
+      wait for 20 ns;
+		
+		-- sll
+		OPCODE <= "000000";
+      FUNCT  <= "000000";
+      wait for 20 ns;
+		
+		-- srl
+		OPCODE <= "000000";
+      FUNCT  <= "000010";
+      wait for 20 ns;
+		
+		-- sra
+		OPCODE <= "000000";
+      FUNCT  <= "000011";
+      wait for 20 ns;
+		
+		-- slt
+		OPCODE <= "000000";
+      FUNCT  <= "101010";
+      wait for 20 ns;
+		
+		-- sltu
+		OPCODE <= "000000";
+      FUNCT  <= "101011";
+      wait for 20 ns;
+		
+		-- slti
+		OPCODE <= "001010";
+      FUNCT  <= "111111";
+      wait for 20 ns;
+		
+		-- sltiu
+		OPCODE <= "001011";
+      FUNCT  <= "101010";
+      wait for 20 ns;
+		
+		-- j
+		OPCODE <= "000010";
+      FUNCT  <= "000011";
+      wait for 20 ns;
+		
+		-- jal
+		OPCODE <= "000011";
+      FUNCT  <= "000011";
+      wait for 20 ns;
+		
+		-- jr
+		OPCODE <= "000000";
+      FUNCT  <= "001000";
+      wait for 20 ns;
+		
+		-- beq
+		OPCODE <= "000100";
+      FUNCT  <= "001000";
+      wait for 20 ns;
+		
+		-- bne
+		OPCODE <= "000101";
+      FUNCT  <= "001000";
+      wait for 20 ns;
+		
+		-- lui
+		OPCODE <= "001111";
+      FUNCT  <= "001000";
+      wait for 20 ns;
+		
+		-- lw
+		OPCODE <= "100011";
+      FUNCT  <= "001000";
+      wait for 20 ns;
+		
+		-- sw
+		OPCODE <= "101011";
+      FUNCT  <= "000000";
       wait;
    end process;
 END;
