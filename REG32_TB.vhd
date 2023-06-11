@@ -62,14 +62,18 @@ BEGIN
     CLK <= '1';
 	
 	 wait for 5 ns;
+	 
 	 EN <= '0';
+	 
     wait for 5 ns;
 
     DIN <= x"FFFFFFFF";
     CLK <= '0';
 
     wait for 5 ns;
+	 
 	 en <= '1';
+	 
 	 wait for 5 ns;
     CLK <= '1';
 
