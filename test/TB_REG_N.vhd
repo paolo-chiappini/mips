@@ -6,19 +6,6 @@ END REG32_TB;
  
 ARCHITECTURE behavior OF REG32_TB IS 
  
-    -- Component Declaration for the Unit Under Test (UUT)
- 
-    COMPONENT REG32
-    PORT(
-         CLK : IN  std_logic;
-         RST : IN  std_logic;
-         EN : IN  std_logic;
-         DIN : IN  std_logic_vector(0 to 31);
-         DOUT : OUT  std_logic_vector(0 to 31)
-        );
-    END COMPONENT;
-    
-
    --Inputs
    signal CLK : std_logic;
    signal RST : std_logic;
@@ -32,9 +19,14 @@ ARCHITECTURE behavior OF REG32_TB IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-  uut: REG32 PORT MAP (
+  REG: entity work.REG_N(RTL)
+  generic map(
+		N => 32
+  )
+  port map (
           CLK => CLK,
           RST => RST,
+	  PRESET => (others => '0'),
           EN => EN,
           DIN => DIN,
           DOUT => DOUT
