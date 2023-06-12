@@ -78,11 +78,8 @@ begin
     TEMP_CASCADE_C(0) <= CIN;
     COUT <= TEMP_CASCADE_C(SUB_MODULES);  
     
-    process (TEMP_XOR, TEMP_C) is
-    begin
-        for I in S'range loop 
-            S(I) <= TEMP_XOR(I) xor TEMP_C(I); 
-        end loop; 
-    end process; 
+    GEN_XORS : for I in S'range generate 
+        S(I) <= TEMP_XOR(I) xor TEMP_C(I); 
+    end generate GEN_XORS; 
 end STRUCT;
 
