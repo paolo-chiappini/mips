@@ -1,73 +1,70 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-
- ENTITY TB_CONTROL_UNIT IS
-END TB_CONTROL_UNIT;
- 
 ARCHITECTURE behavior OF TB_CONTROL_UNIT IS 
-
+ 
+    -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT CONTROL_UNIT
-    PORT(
-         OPCODE : IN  std_logic_vector(5 downto 0);
-         FUNCT : IN  std_logic_vector(5 downto 0);
-         DstReg : OUT  std_logic;
-         WrReg : OUT  std_logic;
-         AluSrc : OUT  std_logic;
-         AluOp : OUT  std_logic_vector(5 downto 0);
-         Branch : OUT  std_logic;
-         Jump : OUT  std_logic;
-         Jal : OUT  std_logic;
-         JumpReg : OUT  std_logic;
-         ShiftOp : OUT  std_logic_vector(1 downto 0);
-         MemWr : OUT  std_logic;
-         MemRd : OUT  std_logic;
-         MemToReg : OUT  std_logic;
-         DataEna : OUT  std_logic;
-         FetchL : OUT  std_logic
-        );
+    port(
+		OPCODE 	  : in std_logic_vector(5 downto 0);
+		FUNCT 	  : in std_logic_vector(5 downto 0);
+		DST_REG    : out std_logic;
+		WR_REG     : out std_logic;
+		ALUS_SRC   : out std_logic;
+		ALU_OP     : out std_logic_vector(5 downto 0);
+		BRANCH_BEQ : out std_logic;
+		BRANCH_BNE : out std_logic;
+		JUMP       : out std_logic;
+		JAL        : out std_logic;
+		JUMP_REG   : out std_logic;
+		SHIFT_OP   : out std_logic_vector(1 downto 0);
+		MEM_WR     : out std_logic;
+		MEM_RD     : out std_logic;
+		MEM_TO_REG : out std_logic;
+		DATA_ENA   : out std_logic;
+		FETCH_I    : out std_logic
+	);
     END COMPONENT;
-    
 
    --Inputs
-   signal OPCODE : std_logic_vector(5 downto 0) := (others => '0');
-   signal FUNCT : std_logic_vector(5 downto 0) := (others => '0');
+   signal OPCODE : std_logic_vector(5 downto 0);
+   signal FUNCT : std_logic_vector(5 downto 0);
 
  	--Outputs
-   signal DstReg : std_logic;
-   signal WrReg : std_logic;
-   signal AluSrc : std_logic;
-   signal AluOp : std_logic_vector(5 downto 0);
-   signal Branch : std_logic;
-   signal Jump : std_logic;
-   signal Jal : std_logic;
-   signal JumpReg : std_logic;
-   signal ShiftOp : std_logic_vector(1 downto 0);
-   signal MemWr : std_logic;
-   signal MemRd : std_logic;
-   signal MemToReg : std_logic;
-   signal DataEna : std_logic;
-   signal FetchL : std_logic;
+   signal DST_REG    :  std_logic;
+	signal WR_REG     :  std_logic;
+	signal ALUS_SRC   :  std_logic;
+	signal ALU_OP     :  std_logic_vector(5 downto 0);
+	signal BRANCH_BEQ :  std_logic;
+	signal BRANCH_BNE :  std_logic;
+	signal JUMP       :  std_logic;
+	signal JAL        :  std_logic;
+	signal JUMP_REG   :  std_logic;
+	signal SHIFT_OP   :  std_logic_vector(1 downto 0);
+	signal MEM_WR     :  std_logic;
+	signal MEM_RD     :  std_logic;
+	signal MEM_TO_REG :  std_logic;
+	signal DATA_ENA   :  std_logic;
+	signal FETCH_I    :  std_logic;
  
 BEGIN
- 
+	-- Instantiate the Unit Under Test (UUT)
    uut: CONTROL_UNIT PORT MAP (
           OPCODE => OPCODE,
           FUNCT => FUNCT,
-          DstReg => DstReg,
-          WrReg => WrReg,
-          AluSrc => AluSrc,
-          AluOp => AluOp,
-          Branch => Branch,
-          Jump => Jump,
-          Jal => Jal,
-          JumpReg => JumpReg,
-          ShiftOp => ShiftOp,
-          MemWr => MemWr,
-          MemRd => MemRd,
-          MemToReg => MemToReg,
-          DataEna => DataEna,
-          FetchL => FetchL
+          DST_REG => DST_REG,
+          WR_REG => WR_REG,
+          ALUS_SRC => ALUS_SRC,
+          ALU_OP => ALU_OP,
+			 BRANCH_BEQ => BRANCH_BEQ,
+          BRANCH_BNE => BRANCH_BNE,
+          JUMP => JUMP,
+          JAL => JAL,
+          JUMP_REG => JUMP_REG,
+          SHIFT_OP => SHIFT_OP,
+          MEM_WR => MEM_WR,
+          MEM_RD => MEM_RD,
+          MEM_TO_REG => MEM_TO_REG,
+          DATA_ENA => DATA_ENA,
+          FETCH_I => FETCH_I
         );
  
 
