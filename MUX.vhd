@@ -3,7 +3,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 package MUX_PKG is
-	type SLV_ARRAY is array (0 to 31) of std_logic_vector(31 downto 0);
+	type SLV_ARRAY is array(natural range<>) of std_logic_vector(31 downto 0);
 end package;
 
 library IEEE;
@@ -12,9 +12,12 @@ USE IEEE.NUMERIC_STD.ALL;
 use work.MUX_PKG.ALL;
 
 entity MUX is
+	generic(
+		SEL_SIZE : integer := 5
+	);
 	port(
-		MUX_IN : in SLV_ARRAY;
-		SEL_IN : in std_logic_vector(4 downto 0);
+		MUX_IN : in SLV_ARRAY(0 to (2**SEL_SIZE)-1);
+		SEL_IN : in std_logic_vector(SEL_SIZE - 1 downto 0);
 		
 		MUX_OUT : out std_logic_vector(31 downto 0)
 	);

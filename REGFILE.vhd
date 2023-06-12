@@ -5,7 +5,7 @@ use work.MUX_PKG.ALL;
 
 entity REGFILE is
     port(
-        WRREG: in std_logic;
+        WR_REG: in std_logic;
         CLK: in std_logic;
         RST: in std_logic;
 
@@ -23,7 +23,7 @@ architecture RTL of REGFILE is
    --type SLV_ARRAY is array (0 to 31) of std_logic_vector(31 downto 0);
 	signal DEC_OUT : std_logic_vector(31 downto 0);
 	signal ENABLE : std_logic_vector(31 downto 0);
-	signal REG_OUT : SLV_ARRAY;
+	signal REG_OUT : SLV_ARRAY(0 to 31);
 begin
    -- decoder
 	DEC: entity work.DEC(RTL)
@@ -38,7 +38,7 @@ begin
    -- registers	
 	REGISTERS: for I in 31 downto 0 generate
 		
-		ENABLE(I) <= DEC_OUT(I) and WRREG;
+		ENABLE(I) <= DEC_OUT(I) and WR_REG;
 		
 		REG: entity work.REG32(RTL)
 		port map(
@@ -51,13 +51,20 @@ begin
 	end generate;
 	
 	-- multiplexers
-	MUX0: entity work.MUX(RTL)
+	MUX0: entity work.MUX(RTL) -- RS -> D0
+	generic map(
+		SEL_SIZE => 5
+	)
 	port map(
 		MUX_IN => REG_OUT,
 		SEL_IN => RS,
 		MUX_OUT => D0
 	);
-	MUX1: entity work.MUX(RTL)
+	
+	MUX1: entity work.MUX(RTL) -- RT -> D1
+	generic map(
+		SEL_SIZE => 5
+	)
 	port map(
 		MUX_IN => REG_OUT,
 		SEL_IN => RT,
