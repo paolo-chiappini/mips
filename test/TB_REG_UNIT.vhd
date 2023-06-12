@@ -138,7 +138,8 @@ BEGIN
 		
 		CLK <= '0';
       wait for CLK_period/2;
-		
+		RS<= "11100"; -- check default values
+		RT<= "11101"; -- check default values
 		CLK <= '1';
 		wait for CLK_period/2;
 		
