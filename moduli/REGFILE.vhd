@@ -24,6 +24,7 @@ architecture RTL of REGFILE is
 	signal DEC_OUT : std_logic_vector(31 downto 0);
 	signal ENABLE : std_logic_vector(31 downto 0);
 	signal REG_OUT : SLV_ARRAY(0 to 31);
+	signal PRESETS : SLV_ARRAY(0 to 31);
 begin
    -- decoder
 	DEC: entity work.DEC(RTL)
@@ -40,10 +41,18 @@ begin
 		
 		ENABLE(I) <= DEC_OUT(I) and WR_REG;
 		
-		REG: entity work.REG32(RTL)
+		PRESETS(I) <= x"00000300" when I = 28 else
+			           x"000003FC" when I = 29 else
+					     x"00000000";
+						  
+		REG: entity work.REG_N(RTL)
+		generic map(
+			N => 32
+		)
 		port map(
 		    CLK => CLK,
           RST => RST,
+			 PRESET => PRESETS(I),
           EN => ENABLE(I),
           DIN => DIN,
           DOUT => REG_OUT(I)
@@ -72,5 +81,5 @@ begin
 	);
 	
 	
+	
 end RTL;
-
