@@ -143,6 +143,7 @@ architecture STRUCT of MIPS_32 is
     signal SIG_SHIFT_OUT : std_logic_vector(31 downto 0);
 
     signal SIG_SIGN_EXT : std_logic_vector(31 downto 0);
+    signal TEMP_IMM : std_logic_vector(31 downto 0);
 
     -- CU control signals
     signal SIG_DST_REG : std_logic; 
@@ -216,6 +217,8 @@ begin
             D1 => SIG_D1
         ); 
 
+    TEMP_IMM <= SIG_INSTR(15 downto 0) & x"0000"; 
+
     -- Sign extend
     U3 : SHIFTER_N_M 
         generic map (
@@ -223,7 +226,7 @@ begin
             M => 16
         )
         port map (
-            X(31 downto 16) => SIG_INSTR(15 downto 0), 
+            X => TEMP_IMM, 
             ENABLE => '1', 
             FILL => SIG_INSTR(15), 
             Y => SIG_SIGN_EXT
