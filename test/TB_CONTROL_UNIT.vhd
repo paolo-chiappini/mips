@@ -8,7 +8,7 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
 		FUNCT 	  : in std_logic_vector(5 downto 0);
 		DST_REG    : out std_logic;
 		WR_REG     : out std_logic;
-		ALUS_SRC   : out std_logic;
+		ALU_SRC   : out std_logic;
 		ALU_OP     : out std_logic_vector(5 downto 0);
 		BRANCH_BEQ : out std_logic;
 		BRANCH_BNE : out std_logic;
@@ -31,7 +31,7 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
  	--Outputs
    signal DST_REG    :  std_logic;
 	signal WR_REG     :  std_logic;
-	signal ALUS_SRC   :  std_logic;
+	signal ALU_SRC   :  std_logic;
 	signal ALU_OP     :  std_logic_vector(5 downto 0);
 	signal BRANCH_BEQ :  std_logic;
 	signal BRANCH_BNE :  std_logic;
@@ -52,7 +52,7 @@ BEGIN
           FUNCT => FUNCT,
           DST_REG => DST_REG,
           WR_REG => WR_REG,
-          ALUS_SRC => ALUS_SRC,
+          ALU_SRC => ALU_SRC,
           ALU_OP => ALU_OP,
 			 BRANCH_BEQ => BRANCH_BEQ,
           BRANCH_BNE => BRANCH_BNE,

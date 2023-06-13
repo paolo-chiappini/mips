@@ -1,8 +1,8 @@
-ARCHITECTURE behavior OF TB_MANAGMENT_PC IS 
+ARCHITECTURE behavior OF TB_MANAGEMENT_PC IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT MANAGMENT_PC
+    COMPONENT MANAGEMENT_PC
 		 port(
 			ADDR       : in std_logic_vector(25 downto 0);
 			PC         : in std_logic_vector(31 downto 0);
@@ -35,7 +35,7 @@ ARCHITECTURE behavior OF TB_MANAGMENT_PC IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: MANAGMENT_PC PORT MAP (
+   uut: MANAGEMENT_PC PORT MAP (
           ADDR => ADDR,
           PC => PC,
           IMM => IMM,

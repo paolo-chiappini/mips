@@ -7,7 +7,7 @@ entity CONTROL_UNIT is
 		FUNCT 	  : in std_logic_vector(5 downto 0);
 		DST_REG    : out std_logic;
 		WR_REG     : out std_logic;
-		ALUS_SRC   : out std_logic;
+		ALU_SRC   : out std_logic;
 		ALU_OP     : out std_logic_vector(5 downto 0);
 		BRANCH_BEQ : out std_logic;
 		BRANCH_BNE : out std_logic;
@@ -56,7 +56,7 @@ begin
 
 	DST_REG    <= SIGNAL_CONTROL(20);
 	WR_REG     <= SIGNAL_CONTROL(19);
-	ALUS_SRC   <= SIGNAL_CONTROL(18);
+	ALU_SRC   <= SIGNAL_CONTROL(18);
 	ALU_OP     <= SIGNAL_CONTROL(17 downto 12);
 	BRANCH_BEQ <= SIGNAL_CONTROL(11);
 	BRANCH_BNE <= SIGNAL_CONTROL(10);

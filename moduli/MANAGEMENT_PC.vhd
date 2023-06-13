@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity MANAGMENT_PC is
+entity MANAGEMENT_PC is
 	port(
 		ADDR       : in std_logic_vector(25 downto 0);
 		PC         : in std_logic_vector(31 downto 0);
@@ -14,9 +14,9 @@ entity MANAGMENT_PC is
 		D0         : in std_logic_vector(31 downto 0);
 		NEW_PC     : out std_logic_vector(31 downto 0)
 	);
-end MANAGMENT_PC;
+end MANAGEMENT_PC;
 
-architecture RTL of MANAGMENT_PC is
+architecture RTL of MANAGEMENT_PC is
 
 	component AL_BLOCK_4N is
     generic (
