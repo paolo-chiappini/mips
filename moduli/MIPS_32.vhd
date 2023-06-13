@@ -96,6 +96,19 @@ architecture STRUCT of MIPS_32 is
         ); 
     end component;
 
+    component SHIFTER_N_M is
+        generic ( 
+            N : integer := 32; -- number of bits 
+            M : integer := 1   -- fixed shift amount 
+        ); 
+        port (
+            X       : in  std_logic_vector(N - 1 downto 0);
+            ENABLE  : in  std_logic; 
+            FILL    : in  std_logic; -- bit used to fill the shifted spaces  
+            Y       : out std_logic_vector(N - 1 downto 0)
+        );
+    end component;
+
     component REG_N IS
 	    generic(
 		    N: integer := 32
