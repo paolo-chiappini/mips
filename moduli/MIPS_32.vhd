@@ -25,7 +25,7 @@ architecture STRUCT of MIPS_32 is
             FUNCT 	  : in std_logic_vector(5 downto 0);
             DST_REG    : out std_logic;
             WR_REG     : out std_logic;
-            ALUS_SRC   : out std_logic;
+            ALU_SRC   : out std_logic;
             ALU_OP     : out std_logic_vector(5 downto 0);
             BRANCH_BEQ : out std_logic;
             BRANCH_BNE : out std_logic;
@@ -41,7 +41,7 @@ architecture STRUCT of MIPS_32 is
         );
     end component;
 
-    component MANAGMENT_PC is
+    component MANAGEMENT_PC is
         port(
             ADDR       : in std_logic_vector(25 downto 0);
             PC         : in std_logic_vector(31 downto 0);
@@ -171,7 +171,7 @@ begin
             FUNCT => SIG_INSTR(31 downto 26), 
             DST_REG => SIG_DST_REG, 
             WR_REG => SIG_WR_REG, 
-            ALUS_SRC => SIG_ALU_SRC, 
+            ALU_SRC => SIG_ALU_SRC, 
             ALU_OP => SIG_ALU_OP, 
             BRANCH_BEQ => SIG_BEQ, 
             BRANCH_BNE => SIG_BNE, 
@@ -259,6 +259,7 @@ begin
     -- Mem interface signals 
     IADDR <= SIG_PC_OUT; 
     IEN <= SIG_FETCH_I; 
+    SIG_INSTR <= IDATA; 
     DADDR <= SIG_SHIFT_OUT; 
     DOUT <= SIG_D1; 
     DOP <= (SIG_MEM_WR and not SIG_MEM_RD); -- mutually exclusive
