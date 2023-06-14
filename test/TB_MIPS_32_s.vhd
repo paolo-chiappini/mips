@@ -1,10 +1,10 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
-ENTITY TB_MIPS_32 IS
-END TB_MIPS_32;
+ENTITY TB_MIPS_32_S IS
+END TB_MIPS_32_S;
  
-ARCHITECTURE behavior OF TB_MIPS_32 IS 
+ARCHITECTURE behavior OF TB_MIPS_32_S IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
@@ -73,45 +73,75 @@ BEGIN
 		RST   <= '0';
       wait for 50 ns;
 		
-		-- addi $t0, $t0, 4
-		IDATA <= x"21080004";
+		-- addi $t3, $t3, 24
+		IDATA <= x"216b0018";
 		wait for 50 ns;
 		
-		-- addi $t1, $t1, 8
-		IDATA <= x"21290008";
+		-- addi $t4, $t4, 8
+		IDATA <= x"218c0008";
 		wait for 50 ns;
 		
-		-- addi $t2, $t1, $t0
-		IDATA <= x"01285020";
+		-- sll $t1, $t3, 4
+		IDATA <= x"000b4900";
 		wait for 50 ns;
 		
-		-- sub $t3, $t1, $t0
-		IDATA <= x"01285822";
+		-- sll $t1, $t3, 1
+		IDATA <= x"000b4840";
 		wait for 50 ns;
 		
-		-- and $t4, $t2, $t1
-		IDATA <= x"01496024";
+		-- sll $t1, $t3, 31
+		IDATA <= x"000b4fc0";
 		wait for 50 ns;
 		
-		-- lui $t5, 123
-		IDATA <= x"3c0d007b";
+		-- srl $t4, $t3, 10
+		IDATA <= x"000b6282";
 		wait for 50 ns;
 		
-		-- addi $t0, $t5, 8
-		IDATA <= x"21a80008";
+		-- srl $t4, $t3, 2
+		IDATA <= x"000b6082";
 		wait for 50 ns;
 		
-		-- addi $t1, $t1, 500
-		IDATA <= x"212901f4";
+		-- srl $t4, $t3, 0
+		IDATA <= x"000b6002";
 		wait for 50 ns;
 		
-		-- sub $t3, $t0, $t1
-		IDATA <= x"01095822";
+		-- sra $t4, $t3, 1
+		IDATA <= x"000b6043";
 		wait for 50 ns;
 		
+		-- lui $t4, 65535
+		IDATA <= x"3c0cffff";
+		wait for 50 ns;
 		
-
-      wait;
+		-- sra $t4, $t4, 16
+		IDATA <= x"000c6403";
+		wait for 50 ns;
+		
+		-- now set if less ...
+		-- slt $t4, $t4, $t3
+		IDATA <= x"018b782a";
+		wait for 50 ns;
+		
+		-- slt $t4, $t3, $t4
+		IDATA <= x"016c782a";
+		wait for 50 ns;
+		
+		-- slt $t5, $t5, $t5
+		IDATA <= x"01ad682a";
+		wait for 50 ns;
+		
+		-- slt $t5, $t6, $t3
+		IDATA <= x"01cb682a";
+		wait for 50 ns;
+		
+		-- add $t4, $t7, $t4
+		IDATA <= x"01ec6020";
+		wait for 50 ns;
+		
+		-- slt $t5, $t4, $t7
+		IDATA <= x"018f682a";
+		
+		wait;
    end process;
 
 END;
