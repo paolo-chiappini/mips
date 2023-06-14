@@ -43,8 +43,8 @@ begin
 							"110---000000001100001" when OPCODE = "000000" and FUNCT = "000011" else -- sra
 							"110011101000000000001" when OPCODE = "000000" and FUNCT = "101010" else -- slt
 							"110010101000000000001" when OPCODE = "000000" and FUNCT = "101011" else -- sltu
-							"010011101000000000001" when OPCODE = "001010" else -- slti
-							"010010101000000000001" when OPCODE = "001011" else -- sltiu
+							"011011101000000000001" when OPCODE = "001010" else -- slti
+							"011010101000000000001" when OPCODE = "001011" else -- sltiu
 							"-0-------001-0--00001" when OPCODE = "000010" else -- j
 							"-1-------001100000001" when OPCODE = "000011" else -- jal
 							"-0-----------10000001" when OPCODE = "000000" and FUNCT = "001000" else -- jr
