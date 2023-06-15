@@ -5,9 +5,11 @@ entity CONTROL_UNIT is
 	port(
 		OPCODE 	  : in std_logic_vector(5 downto 0);
 		FUNCT 	  : in std_logic_vector(5 downto 0);
+		LUI		   : out std_logic; 
 		DST_REG    : out std_logic;
 		WR_REG     : out std_logic;
 		ALU_SRC   : out std_logic;
+		SIGN_EXT   : out std_logic; 
 		ALU_OP     : out std_logic_vector(5 downto 0);
 		BRANCH_BEQ : out std_logic;
 		BRANCH_BNE : out std_logic;
@@ -15,8 +17,7 @@ entity CONTROL_UNIT is
 		JAL        : out std_logic;
 		JUMP_REG   : out std_logic;
 		SHIFT_OP   : out std_logic_vector(1 downto 0);
-		MEM_WR     : out std_logic;
-		MEM_RD     : out std_logic;
+		MEM_OP	   : out std_logic; 
 		MEM_TO_REG : out std_logic;
 		DATA_ENA   : out std_logic;
 		FETCH_I    : out std_logic
@@ -28,44 +29,45 @@ architecture RTL of CONTROL_UNIT is
 begin
 
 	SIGNAL_CONTROL <= "11000-100000000000001" when OPCODE = "000000" and FUNCT = "100000" else -- add
-							"11001-100000000000001" when OPCODE = "000000" and FUNCT = "100010" else -- sub
-							"01100-100000000000001" when OPCODE = "001000" and FUNCT = "------" else -- addiu
-							"11000-001000000000001" when OPCODE = "000000" and FUNCT = "100100" else -- and
-							"11000-011000000000001" when OPCODE = "000000" and FUNCT = "100101" else -- or
-							"11011-001000000000001" when OPCODE = "000000" and FUNCT = "100111" else -- nor
-							"11000-011000000000001" when OPCODE = "000000" and FUNCT = "100110" else -- xor
-							"01100-001000000000001" when OPCODE = "001100" and FUNCT = "------" else -- andi
-							"01100-010000000000001" when OPCODE = "001101" and FUNCT = "------" else -- ori
-							"01100-011000000000001" when OPCODE = "001110" and FUNCT = "------" else -- xori
-							"110---000000000100001" when OPCODE = "000000" and FUNCT = "000000" else -- sll
-							"110---000000001000001" when OPCODE = "000000" and FUNCT = "000010" else -- srl
-							"110---000000001100001" when OPCODE = "000000" and FUNCT = "000011" else -- sra
-							"110011101000000000001" when OPCODE = "000000" and FUNCT = "101010" else -- slt
-							"110010101000000000001" when OPCODE = "000000" and FUNCT = "101011" else -- sltu
-							"010011101000000000001" when OPCODE = "001010" and FUNCT = "------" else -- slti
-							"010010101000000000001" when OPCODE = "001011" and FUNCT = "------" else -- sltiu
-							"-0-------001-0--00001" when OPCODE = "000010" and FUNCT = "------" else -- j
-							"-1-------001100000001" when OPCODE = "000011" and FUNCT = "------" else -- jal
-							"-0-----------10000001" when OPCODE = "000000" and FUNCT = "001000" else -- jr
-							"-0001-100100-00000001" when OPCODE = "000100" and FUNCT = "------" else -- beq
-							"-0001-100010-00000001" when OPCODE = "000101" and FUNCT = "------" else -- bne
-							"011---000000000000001" when OPCODE = "001111" and FUNCT = "------" else -- lui
-							"01100-100000000001111" when OPCODE = "100011" and FUNCT = "------" else -- lw
-							"-0100-100000000010011" when OPCODE = "101011" and FUNCT = "------" else -- sw
+							"110001-1000000000-001" when OPCODE = "000000" and FUNCT = "100010" else -- sub
+							"011000-1000000000-001" when OPCODE = "001000" and FUNCT = "------" else -- addiu
+							"110000-0010000000-001" when OPCODE = "000000" and FUNCT = "100100" else -- and
+							"110000-0110000000-001" when OPCODE = "000000" and FUNCT = "100101" else -- or
+							"110011-0010000000-001" when OPCODE = "000000" and FUNCT = "100111" else -- nor
+							"110000-0110000000-001" when OPCODE = "000000" and FUNCT = "100110" else -- xor
+							"011100-0010000000-001" when OPCODE = "001100" and FUNCT = "------" else -- andi
+							"011100-0100000000-001" when OPCODE = "001101" and FUNCT = "------" else -- ori
+							"011100-0110000000-001" when OPCODE = "001110" and FUNCT = "------" else -- xori
+							"1100---0000000001-001" when OPCODE = "000000" and FUNCT = "000000" else -- sll
+							"1100---0000000010-001" when OPCODE = "000000" and FUNCT = "000010" else -- srl
+							"1100---0000000011-001" when OPCODE = "000000" and FUNCT = "000011" else -- sra
+							"11000111010000000-001" when OPCODE = "000000" and FUNCT = "101010" else -- slt
+							"11000101010000000-001" when OPCODE = "000000" and FUNCT = "101011" else -- sltu
+							"01100111010000000-001" when OPCODE = "001010" and FUNCT = "------" else -- slti
+							"01110101010000000-001" when OPCODE = "001011" and FUNCT = "------" else -- sltiu
+							"-0-0------001-0---001" when OPCODE = "000010" and FUNCT = "------" else -- j
+							"-1-0------0011000-001" when OPCODE = "000011" and FUNCT = "------" else -- jal
+							"-0-0----------100-001" when OPCODE = "000000" and FUNCT = "001000" else -- jr
+							"-00001-100100-000-001" when OPCODE = "000100" and FUNCT = "------" else -- beq
+							"-00001-100010-000-001" when OPCODE = "000101" and FUNCT = "------" else -- bne
+							"0110---0000000000-001" when OPCODE = "001111" and FUNCT = "------" else -- lui
+							"011100-10000000000111" when OPCODE = "100011" and FUNCT = "------" else -- lw
+							"-01000-10000000001011" when OPCODE = "101011" and FUNCT = "------" else -- sw
 							"---------------------"; -- default
 
+	LUI 	   <= SIGNAL_CONTROL(21);  
 	DST_REG    <= SIGNAL_CONTROL(20);
 	WR_REG     <= SIGNAL_CONTROL(19);
-	ALU_SRC   <= SIGNAL_CONTROL(18);
-	ALU_OP     <= SIGNAL_CONTROL(17 downto 12);
-	BRANCH_BEQ <= SIGNAL_CONTROL(11);
-	BRANCH_BNE <= SIGNAL_CONTROL(10);
-	JUMP       <= SIGNAL_CONTROL(9);
-	JAL        <= SIGNAL_CONTROL(8);
-	JUMP_REG   <= SIGNAL_CONTROL(7);
-	SHIFT_OP   <= SIGNAL_CONTROL(6 downto 5);
-	MEM_WR     <= SIGNAL_CONTROL(4);
-	MEM_RD     <= SIGNAL_CONTROL(3);
+	ALU_SRC    <= SIGNAL_CONTROL(18);
+	SIGN_EXT   <= SIGNAL_CONTROL(17); 
+	ALU_OP     <= SIGNAL_CONTROL(16 downto 11);
+	BRANCH_BEQ <= SIGNAL_CONTROL(10);
+	BRANCH_BNE <= SIGNAL_CONTROL(9);
+	JUMP       <= SIGNAL_CONTROL(8);
+	JAL        <= SIGNAL_CONTROL(7);
+	JUMP_REG   <= SIGNAL_CONTROL(6);
+	SHIFT_OP   <= SIGNAL_CONTROL(5 downto 4);
+	MEM_OP 	   <= SIGNAL_CONTROL(3);
 	MEM_TO_REG <= SIGNAL_CONTROL(2);
 	DATA_ENA   <= SIGNAL_CONTROL(1);
 	FETCH_I    <= SIGNAL_CONTROL(0);
