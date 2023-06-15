@@ -23,7 +23,8 @@ architecture STRUCT of MIPS_32 is
         port(
             OPCODE 	  : in std_logic_vector(5 downto 0);
             FUNCT 	  : in std_logic_vector(5 downto 0);
-            DST_REG    : out std_logic;
+            LUI		  : out std_logic;
+				DST_REG    : out std_logic;
             WR_REG     : out std_logic;
             ALU_SRC   : out std_logic;
             ALU_OP     : out std_logic_vector(5 downto 0);
@@ -146,6 +147,7 @@ architecture STRUCT of MIPS_32 is
     signal TEMP_IMM : std_logic_vector(31 downto 0);
 
     -- CU control signals
+	 signal SIG_LUI : std_logic;
     signal SIG_DST_REG : std_logic; 
     signal SIG_WR_REG : std_logic; 
     signal SIG_ALU_SRC : std_logic; 
@@ -181,9 +183,12 @@ begin
     -- CU 
     U1 : CONTROL_UNIT 
         port map (
-            OPCODE => SIG_INSTR(5 downto 0), 
-            FUNCT => SIG_INSTR(31 downto 26), 
-            DST_REG => SIG_DST_REG, 
+            -- OPCODE => SIG_INSTR(5 downto 0), 
+            -- FUNCT => SIG_INSTR(31 downto 26), 
+				OPCODE => SIG_INSTR(31 downto 26), 
+				FUNCT => SIG_INSTR(5 downto 0),
+            LUI => SIG_LUI,
+				DST_REG => SIG_DST_REG, 
             WR_REG => SIG_WR_REG, 
             ALU_SRC => SIG_ALU_SRC, 
             ALU_OP => SIG_ALU_OP, 
@@ -199,7 +204,8 @@ begin
             DATA_ENA => SIG_DATA_ENA, 
             FETCH_I => SIG_FETCH_I
         ); 
-
+		
+		
     -- Register File 
     U2: REG_UNIT
         port map (
@@ -255,8 +261,9 @@ begin
         ); 
 
     -- Write back 
-    SIG_WRITE_BACK <= DIN when SIG_MEM_TO_REG = '1' else SIG_SHIFT_OUT;
-
+    SIG_WRITE_BACK <= DIN when SIG_MEM_TO_REG = '1' else
+							 SIG_INSTR(15 downto 0) & x"0000" when SIG_LUI = '1' else
+						    SIG_SHIFT_OUT;
     -- Branch unit 
     U6 : MANAGEMENT_PC
         port map (
