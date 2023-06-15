@@ -21,11 +21,13 @@ end MIPS_32;
 architecture STRUCT of MIPS_32 is
     component CONTROL_UNIT is
         port(
-            OPCODE 	  : in std_logic_vector(5 downto 0);
-            FUNCT 	  : in std_logic_vector(5 downto 0);
-            DST_REG    : out std_logic;
+            OPCODE 	   : in std_logic_vector(5 downto 0);
+            FUNCT 	   : in std_logic_vector(5 downto 0);
+            LUI		   : out std_logic;
+			DST_REG    : out std_logic;
             WR_REG     : out std_logic;
-            ALU_SRC   : out std_logic;
+            ALU_SRC    : out std_logic;
+            SIGN_EXT   : out std_logic; 
             ALU_OP     : out std_logic_vector(5 downto 0);
             BRANCH_BEQ : out std_logic;
             BRANCH_BNE : out std_logic;
@@ -33,8 +35,7 @@ architecture STRUCT of MIPS_32 is
             JAL        : out std_logic;
             JUMP_REG   : out std_logic;
             SHIFT_OP   : out std_logic_vector(1 downto 0);
-            MEM_WR     : out std_logic;
-            MEM_RD     : out std_logic;
+            MEM_OP     : out std_logic;
             MEM_TO_REG : out std_logic;
             DATA_ENA   : out std_logic;
             FETCH_I    : out std_logic
@@ -143,12 +144,15 @@ architecture STRUCT of MIPS_32 is
     signal SIG_SHIFT_OUT : std_logic_vector(31 downto 0);
 
     signal SIG_SIGN_EXT : std_logic_vector(31 downto 0);
+	 signal TEMP_FILL : std_logic; 
     signal TEMP_IMM : std_logic_vector(31 downto 0);
 
     -- CU control signals
+	 signal SIG_LUI : std_logic;
     signal SIG_DST_REG : std_logic; 
     signal SIG_WR_REG : std_logic; 
     signal SIG_ALU_SRC : std_logic; 
+    signal SIG_SIGN_EXT_ENA : std_logic; 
     signal SIG_ALU_OP : std_logic_vector(5 downto 0); 
     signal SIG_BEQ : std_logic; 
     signal SIG_BNE : std_logic; 
@@ -156,8 +160,6 @@ architecture STRUCT of MIPS_32 is
     signal SIG_JAL : std_logic; 
     signal SIG_JR : std_logic; 
     signal SIG_SHIFT_OP : std_logic_vector(1 downto 0);
-    signal SIG_MEM_WR : std_logic; 
-    signal SIG_MEM_RD : std_logic; 
     signal SIG_MEM_TO_REG : std_logic; 
     signal SIG_DATA_ENA : std_logic; 
     signal SIG_FETCH_I : std_logic; 
@@ -181,11 +183,13 @@ begin
     -- CU 
     U1 : CONTROL_UNIT 
         port map (
-            OPCODE => SIG_INSTR(5 downto 0), 
-            FUNCT => SIG_INSTR(31 downto 26), 
-            DST_REG => SIG_DST_REG, 
+            OPCODE => SIG_INSTR(31 downto 26), 
+			FUNCT => SIG_INSTR(5 downto 0),
+            LUI => SIG_LUI,
+			DST_REG => SIG_DST_REG, 
             WR_REG => SIG_WR_REG, 
             ALU_SRC => SIG_ALU_SRC, 
+            SIGN_EXT => SIG_SIGN_EXT_ENA,
             ALU_OP => SIG_ALU_OP, 
             BRANCH_BEQ => SIG_BEQ, 
             BRANCH_BNE => SIG_BNE, 
@@ -193,13 +197,13 @@ begin
             JAL => SIG_JAL, 
             JUMP_REG => SIG_JR, 
             SHIFT_OP => SIG_SHIFT_OP, 
-            MEM_WR => SIG_MEM_WR, 
-            MEM_RD => SIG_MEM_RD, 
+            MEM_OP => DOP,
             MEM_TO_REG => SIG_MEM_TO_REG, 
             DATA_ENA => SIG_DATA_ENA, 
             FETCH_I => SIG_FETCH_I
         ); 
-
+		
+		
     -- Register File 
     U2: REG_UNIT
         port map (
@@ -220,6 +224,8 @@ begin
     TEMP_IMM <= SIG_INSTR(15 downto 0) & x"0000"; 
 
     -- Sign extend
+	 TEMP_FILL <= SIG_INSTR(15) when SIG_SIGN_EXT_ENA = '1' else '0';
+	 
     U3 : SHIFTER_N_M 
         generic map (
             N => 32, 
@@ -228,7 +234,7 @@ begin
         port map (
             X => TEMP_IMM, 
             ENABLE => '1', 
-            FILL => SIG_INSTR(15), 
+            FILL => TEMP_FILL, 
             Y => SIG_SIGN_EXT
         ); 
 
@@ -255,8 +261,9 @@ begin
         ); 
 
     -- Write back 
-    SIG_WRITE_BACK <= DIN when SIG_MEM_TO_REG = '1' else SIG_SHIFT_OUT;
-
+    SIG_WRITE_BACK <= DIN when SIG_MEM_TO_REG = '1' else
+							SIG_INSTR(15 downto 0) & x"0000" when SIG_LUI = '1' else
+						    SIG_SHIFT_OUT;
     -- Branch unit 
     U6 : MANAGEMENT_PC
         port map (
@@ -278,7 +285,6 @@ begin
     SIG_INSTR <= IDATA; 
     DADDR <= SIG_SHIFT_OUT; 
     DOUT <= SIG_D1; 
-    DOP <= (SIG_MEM_WR and not SIG_MEM_RD); -- mutually exclusive
     DEN <= SIG_DATA_ENA;
 
 end STRUCT;
