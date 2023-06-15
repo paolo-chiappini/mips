@@ -224,7 +224,7 @@ begin
     TEMP_IMM <= SIG_INSTR(15 downto 0) & x"0000"; 
 
     -- Sign extend
-	 TEMP_FILL <= SIG_INSTR(15) when SIG_SIGN_EXT_ENA = '1' else '0';
+	 TEMP_FILL <= SIG_INSTR(15) when SIG_SIGN_EXT_ENA = '0' else '0';
 	 
     U3 : SHIFTER_N_M 
         generic map (
