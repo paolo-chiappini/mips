@@ -53,7 +53,7 @@ begin
 					  "10110---0000000000-001" when OPCODE = "001111" and FUNCT = "------" else -- lui
 					  "0011100-10000000000111" when OPCODE = "100011" and FUNCT = "------" else -- lw
 					  "0-01000-10000000001011" when OPCODE = "101011" and FUNCT = "------" else -- sw
-					  "----------------------"; -- default
+					  "--0--------000-0----01" -- default
 
 	LUI 	   <= SIGNAL_CONTROL(21);  
 	DST_REG    <= SIGNAL_CONTROL(20);
