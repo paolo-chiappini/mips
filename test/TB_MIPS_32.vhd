@@ -147,7 +147,3 @@ BEGIN
    end process;
 
 END;
-
--- xor $t7, $t3, $t4
--- IDATA <= x"016c7826";
--- wait for 50 ns;

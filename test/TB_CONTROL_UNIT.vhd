@@ -1,3 +1,9 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY TB_CONTROL_UNIT IS
+END TB_CONTROL_UNIT;
+
 ARCHITECTURE behavior OF TB_CONTROL_UNIT IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
@@ -50,7 +56,7 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
 BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: CONTROL_UNIT PORT MAP (
-		  LUI => LUI
+		  LUI => LUI,
           OPCODE => OPCODE,
           FUNCT => FUNCT,
           DST_REG => DST_REG,
