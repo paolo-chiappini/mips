@@ -1,14 +1,22 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY TB_CONTROL_UNIT IS
+END TB_CONTROL_UNIT;
+
 ARCHITECTURE behavior OF TB_CONTROL_UNIT IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT CONTROL_UNIT
     port(
-		OPCODE 	  : in std_logic_vector(5 downto 0);
-		FUNCT 	  : in std_logic_vector(5 downto 0);
+		OPCODE 	   : in std_logic_vector(5 downto 0);
+		FUNCT 	   : in std_logic_vector(5 downto 0);
+		LUI		   : out std_logic; 
 		DST_REG    : out std_logic;
 		WR_REG     : out std_logic;
-		ALU_SRC   : out std_logic;
+		ALU_SRC    : out std_logic;
+		SIGN_EXT   : out std_logic; 
 		ALU_OP     : out std_logic_vector(5 downto 0);
 		BRANCH_BEQ : out std_logic;
 		BRANCH_BNE : out std_logic;
@@ -16,8 +24,7 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
 		JAL        : out std_logic;
 		JUMP_REG   : out std_logic;
 		SHIFT_OP   : out std_logic_vector(1 downto 0);
-		MEM_WR     : out std_logic;
-		MEM_RD     : out std_logic;
+		MEM_OP     : out std_logic;
 		MEM_TO_REG : out std_logic;
 		DATA_ENA   : out std_logic;
 		FETCH_I    : out std_logic
@@ -29,9 +36,11 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
    signal FUNCT : std_logic_vector(5 downto 0);
 
  	--Outputs
-   signal DST_REG    :  std_logic;
+	signal LUI 		  :  std_logic;
+    signal DST_REG    :  std_logic;
 	signal WR_REG     :  std_logic;
-	signal ALU_SRC   :  std_logic;
+	signal ALU_SRC    :  std_logic;
+	signal SIGN_EXT   :  std_logic; 
 	signal ALU_OP     :  std_logic_vector(5 downto 0);
 	signal BRANCH_BEQ :  std_logic;
 	signal BRANCH_BNE :  std_logic;
@@ -39,8 +48,7 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
 	signal JAL        :  std_logic;
 	signal JUMP_REG   :  std_logic;
 	signal SHIFT_OP   :  std_logic_vector(1 downto 0);
-	signal MEM_WR     :  std_logic;
-	signal MEM_RD     :  std_logic;
+	signal MEM_OP     :  std_logic;
 	signal MEM_TO_REG :  std_logic;
 	signal DATA_ENA   :  std_logic;
 	signal FETCH_I    :  std_logic;
@@ -48,20 +56,21 @@ ARCHITECTURE behavior OF TB_CONTROL_UNIT IS
 BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: CONTROL_UNIT PORT MAP (
+		  LUI => LUI,
           OPCODE => OPCODE,
           FUNCT => FUNCT,
           DST_REG => DST_REG,
           WR_REG => WR_REG,
           ALU_SRC => ALU_SRC,
+		  SIGN_EXT => SIGN_EXT,
           ALU_OP => ALU_OP,
-			 BRANCH_BEQ => BRANCH_BEQ,
+		  BRANCH_BEQ => BRANCH_BEQ,
           BRANCH_BNE => BRANCH_BNE,
           JUMP => JUMP,
           JAL => JAL,
           JUMP_REG => JUMP_REG,
           SHIFT_OP => SHIFT_OP,
-          MEM_WR => MEM_WR,
-          MEM_RD => MEM_RD,
+          MEM_OP => MEM_OP,
           MEM_TO_REG => MEM_TO_REG,
           DATA_ENA => DATA_ENA,
           FETCH_I => FETCH_I

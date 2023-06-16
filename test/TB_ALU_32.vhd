@@ -75,13 +75,13 @@ BEGIN
 
       ----------------------
 		
-		-- unisgned
+		-- unsigned
 		A <= x"0000000F"; 
 		B <= x"0000000A";
 		ALU_OP <= "010101"; 
 		wait for 100 ns; 
 		
-		-- singed 
+		-- signed 
 		ALU_OP <= "011101"; 
 		wait for 100 ns; 
 		
