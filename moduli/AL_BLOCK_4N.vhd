@@ -28,7 +28,7 @@ architecture STRUCT of AL_BLOCK_4N is
             B_INV   : in  std_logic; 
             A_AND_B : out std_logic; -- becomes A nor B if A_INV = B_INV = 1
             A_OR_B  : out std_logic; -- becomes A nand B if A_INV = B_INV = 1
-            A_XOR_B : out std_logic  -- becomes A xnor B if A_INV = B_INV = 1
+            A_XOR_B : out std_logic  -- becomes A xnor B if A_INV = 0 and B_INV = 1 (or viceversa)
         );
     end component;
 
