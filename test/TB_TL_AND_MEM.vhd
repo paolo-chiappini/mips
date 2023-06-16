@@ -61,7 +61,7 @@ ARCHITECTURE behavior OF TB_TL_AND_MEM IS
    signal DEN : std_logic;
 
    -- Clock period definitions
-   constant CLK_period : time := 100 ns;
+   constant CLK_period : time := 50 ns;
  
 BEGIN
  

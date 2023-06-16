@@ -37,7 +37,7 @@ begin
 		
 		variable I_INDEX : integer := 0;
 		variable D_INDEX : integer := 0;
-	begin
+	begin		
 		if(CLK'event and CLK = '1') then
 		
 			-- MEMORY INITIALIZATION
@@ -71,7 +71,7 @@ begin
 			else
 				if(IEN = '1') then
 					I_INDEX := to_integer(unsigned(IADDR));
-						
+								
 					if(I_INDEX + 4 < 1024) then
 						IDATA <= RAM(I_INDEX)     & 
 									RAM(I_INDEX + 1) & 
@@ -92,21 +92,21 @@ begin
 						end if;
 						
 					end if;
-				-- READ
-				else
-					if(DEN = '1') then
-						D_INDEX := to_integer(unsigned(DADDR));
-						
-						if(D_INDEX + 4 < 1024) then
-							DOUT <= RAM(D_INDEX)     & 
-									  RAM(D_INDEX + 1) &
-									  RAM(D_INDEX + 2) &
-									  RAM(D_INDEX + 3);
-						end if;
-						
-					end if;
 				end if;
 			end if;
+		else if (CLK'event and CLK = '0') then	
+			-- READ
+			if(DOP = '0' and DEN = '1') then
+				D_INDEX := to_integer(unsigned(DADDR));
+		
+				if(D_INDEX + 4 < 1024) then
+					DOUT <= RAM(D_INDEX)     & 
+							  RAM(D_INDEX + 1) &
+							  RAM(D_INDEX + 2) &
+							  RAM(D_INDEX + 3);
+				end if;	
+			end if;
+		end if;
 		end if;
 	end process;
 
