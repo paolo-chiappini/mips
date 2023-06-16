@@ -17,15 +17,9 @@ architecture RTL of LOGIC_1 is
     signal TEMP_A : std_logic; 
     signal TEMP_B : std_logic; 
 begin
-    with A_INV select 
-        TEMP_A <= A     when '0', 
-                  not A when '1', 
-                  '-'   when others; 
-            
-    with B_INV select 
-        TEMP_B <= B     when '0', 
-                  not B when '1', 
-                  '-'   when others; 
+    
+    TEMP_A <= not A when A_INV = '1' else A;
+    TEMP_B <= not B when B_INV = '1' else B;
 
     A_AND_B <= TEMP_A and TEMP_B; 
     A_OR_B  <= TEMP_A or TEMP_B; 
