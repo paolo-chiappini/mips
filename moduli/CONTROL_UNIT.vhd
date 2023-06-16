@@ -28,7 +28,7 @@ architecture RTL of CONTROL_UNIT is
 	signal SIGNAL_CONTROL : std_logic_vector(21 downto 0);
 begin
 
-	SIGNAL_CONTROL <= "011000-100000000000001" when OPCODE = "000000" and FUNCT = "100000" else -- add
+	SIGNAL_CONTROL <= "0110000-1000000000-001" when OPCODE = "000000" and FUNCT = "100000" else -- add
 							  "0110001-1000000000-001" when OPCODE = "000000" and FUNCT = "100010" else -- sub
 							  "0011000-1000000000-001" when OPCODE = "001000" else -- addi
 							  "0110000-0010000000-001" when OPCODE = "000000" and FUNCT = "100100" else -- and
