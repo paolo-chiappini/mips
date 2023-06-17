@@ -27,6 +27,21 @@ architecture Behavioral of MEMORY is
 	type RAM_T is array (0 to 1023) of std_logic_vector(7 downto 0);
    signal RAM : RAM_T;
 begin
+
+	process(IADDR) is
+		variable I_INDEX : integer := 0;
+	begin
+		if(IEN = '1') then
+				I_INDEX := to_integer(unsigned(IADDR));
+								
+				if(I_INDEX + 4 < 1024) then
+					IDATA <= RAM(I_INDEX)     & 
+								RAM(I_INDEX + 1) & 
+								RAM(I_INDEX + 2) & 
+								RAM(I_INDEX + 3);
+				end if;
+			end if;
+	end process;
 	process(CLK, RST) is
 		variable LINE_v : line;
 		file READ_FILE : text;
@@ -35,15 +50,14 @@ begin
 		
 		variable I : integer := 0;
 		
-		variable I_INDEX : integer := 0;
+		
 		variable D_INDEX : integer := 0;
 	begin		
 		if(CLK'event and CLK = '1') then
 		
 			-- MEMORY INITIALIZATION
 			if(RST = '1') then
-			
-				IDATA <= (others => '0');
+				I := 0;
 				DOUT <= (others => '0');
 				
 				file_open(READ_FILE, "initial_mem_state.txt", read_mode);
@@ -69,16 +83,6 @@ begin
 				
 			-- ACCESS TO MEMORY
 			else
-				if(IEN = '1') then
-					I_INDEX := to_integer(unsigned(IADDR));
-								
-					if(I_INDEX + 4 < 1024) then
-						IDATA <= RAM(I_INDEX)     & 
-									RAM(I_INDEX + 1) & 
-									RAM(I_INDEX + 2) & 
-									RAM(I_INDEX + 3);
-					end if;
-				end if;
 				-- WRITE
 				if(DOP = '1') then 
 					if(DEN = '1') then
@@ -94,19 +98,18 @@ begin
 					end if;
 				end if;
 			end if;
-		else if (CLK'event and CLK = '0') then	
-			-- READ
-			if(DOP = '0' and DEN = '1') then
-				D_INDEX := to_integer(unsigned(DADDR));
+			else if(CLK'event and CLK = '0') then
+				if(DOP = '0' and DEN = '1') then
+					D_INDEX := to_integer(unsigned(DADDR));
 		
-				if(D_INDEX + 4 < 1024) then
-					DOUT <= RAM(D_INDEX)     & 
-							  RAM(D_INDEX + 1) &
-							  RAM(D_INDEX + 2) &
-							  RAM(D_INDEX + 3);
-				end if;	
-			end if;
-		end if;
+					if(D_INDEX + 4 < 1024) then
+						DOUT <= RAM(D_INDEX)     & 
+								RAM(D_INDEX + 1) &
+								RAM(D_INDEX + 2) &
+								RAM(D_INDEX + 3);
+					end if;	
+				end if;
+				end if;
 		end if;
 	end process;
 
