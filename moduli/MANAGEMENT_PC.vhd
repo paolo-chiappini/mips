@@ -12,7 +12,8 @@ entity MANAGEMENT_PC is
 		BRANCH_BNE : in std_logic;
 		ZERO       : in std_logic;
 		D0         : in std_logic_vector(31 downto 0);
-		NEW_PC     : out std_logic_vector(31 downto 0)
+		NEW_PC     : out std_logic_vector(31 downto 0);
+		PC_PLUS_4  : out std_logic_vector(31 downto 0)
 	);
 end MANAGEMENT_PC;
 
@@ -88,6 +89,7 @@ begin
 				  
 	NEW_PC  <= AF_JUMP when JUMP_REG = '0' else
 			     D0;
-			
+	PC_PLUS_4 <= PC_4; 
+	
 end RTL;
 

@@ -13,7 +13,8 @@ ARCHITECTURE behavior OF TB_MANAGEMENT_PC IS
 			BRANCH_BNE : in std_logic;
 			ZERO       : in std_logic;
 			D0         : in std_logic_vector(31 downto 0);
-			NEW_PC     : out std_logic_vector(31 downto 0)
+			NEW_PC     : out std_logic_vector(31 downto 0);
+         PC_PLUS_4  : out std_logic_vector(31 downto 0);
 		);
     END COMPONENT;
     
@@ -31,6 +32,7 @@ ARCHITECTURE behavior OF TB_MANAGEMENT_PC IS
 
  	--Outputs
    signal NEW_PC : std_logic_vector(31 downto 0);
+   signal PC_PLUS_4 : std_logic_vector(31 downto 0);
  
 BEGIN
  
@@ -45,7 +47,8 @@ BEGIN
 			 BRANCH_BNE => BRANCH_BNE,
           ZERO => ZERO,
           D0 => D0,
-          NEW_PC => NEW_PC
+          NEW_PC => NEW_PC,
+          PC_PLUS_4 => PC_PLUS_4
         );
 
  

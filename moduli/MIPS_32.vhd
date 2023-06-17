@@ -53,7 +53,8 @@ architecture STRUCT of MIPS_32 is
             BRANCH_BNE : in std_logic;
             ZERO       : in std_logic;
             D0         : in std_logic_vector(31 downto 0);
-            NEW_PC     : out std_logic_vector(31 downto 0)
+            NEW_PC     : out std_logic_vector(31 downto 0);
+				PC_PLUS_4  : out std_logic_vector(31 downto 0)
         );
     end component;
 
@@ -130,6 +131,7 @@ architecture STRUCT of MIPS_32 is
 
     signal SIG_PC_IN : std_logic_vector(31 downto 0); 
     signal SIG_PC_OUT : std_logic_vector(31 downto 0);
+	 signal SIG_PC_PLUS_4 : std_logic_vector(31 downto 0);
 
     signal SIG_INSTR : std_logic_vector(31 downto 0); 
     signal SIG_ADDR : std_logic_vector(31 downto 0); 
@@ -212,7 +214,7 @@ begin
             WR_REG => SIG_WR_REG, 
             JAL => SIG_JAL, 
             DST_REG => SIG_DST_REG, 
-            PC_IN => SIG_PC_OUT, 
+            PC_IN => SIG_PC_PLUS_4, 
             WB_IN => SIG_WRITE_BACK, 
             RS => SIG_INSTR(25 downto 21), 
             RT => SIG_INSTR(20 downto 16), 
@@ -276,7 +278,8 @@ begin
             BRANCH_BNE => SIG_BNE, 
             ZERO => SIG_ZERO,
             D0 => SIG_D0,
-            NEW_PC => SIG_PC_IN
+            NEW_PC => SIG_PC_IN,
+			PC_PLUS_4 => SIG_PC_PLUS_4
         ); 
 
     -- Mem interface signals 
