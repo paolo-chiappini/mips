@@ -51,7 +51,7 @@ begin
 							  "0-00001-100100-000-001" when OPCODE = "000100" else -- beq
 							  "0-00001-100010-000-001" when OPCODE = "000101" else -- bne
 							  "10110---0000000000-001" when OPCODE = "001111" else -- lui
-							  "0011100-10000000000111" when OPCODE = "100011" else -- lw
+							  "0011000-10000000000111" when OPCODE = "100011" else -- lw
 							  "0-01000-10000000001011" when OPCODE = "101011" else -- sw
 							  "--0--------000-0----01"; -- default
 
