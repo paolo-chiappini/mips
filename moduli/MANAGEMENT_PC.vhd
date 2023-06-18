@@ -57,11 +57,14 @@ begin
 		)
 		port map (
         A 	   => PC,
-        B 		=> "00000000000000000000000000000100",
+        B 		=> x"00000004",
         CIN 	=> '0',
         A_INV 	=> '0',
         B_INV 	=> '0',
-        S 		=> PC_4 
+        S 		=> PC_4, 
+		A_AND_B => open, 
+		A_OR_B  => open, 
+		A_XOR_B => open 
       ); 
 	 
 	
@@ -75,7 +78,10 @@ begin
         CIN 	=> '0',
         A_INV 	=> '0',
         B_INV 	=> '0',
-        S 		=> BE
+        S 		=> BE, 
+		A_AND_B => open, 
+		A_OR_B  => open, 
+		A_XOR_B => open 
       ); 
 	
 	
