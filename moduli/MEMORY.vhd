@@ -27,36 +27,19 @@ architecture Behavioral of MEMORY is
 	type RAM_T is array (0 to 1023) of std_logic_vector(7 downto 0);
    signal RAM : RAM_T;
 begin
-
-	process(IADDR) is
-		variable I_INDEX : integer := 0;
-	begin
-		if(IEN = '1') then
-				I_INDEX := to_integer(unsigned(IADDR));
-								
-				if(I_INDEX + 4 < 1024) then
-					IDATA <= RAM(I_INDEX)     & 
-								RAM(I_INDEX + 1) & 
-								RAM(I_INDEX + 2) & 
-								RAM(I_INDEX + 3);
-				end if;
-			end if;
-	end process;
-	process(CLK, RST) is
+	process(CLK) is
 		variable LINE_v : line;
 		file READ_FILE : text;
 		variable DATA : std_logic_vector(31 downto 0);
-		variable MORE_DATA: boolean;
-		
+		variable CORRECT_READ: boolean;
 		variable I : integer := 0;
 		
-		
-		variable D_INDEX : integer := 0;
+		variable D_INDEX : integer;
 	begin		
-		if(CLK'event and CLK = '1') then
+		if(CLK'event) then
 		
 			-- MEMORY INITIALIZATION
-			if(RST = '1') then
+			if(RST = '1' and CLK = '1') then
 				I := 0;
 				DOUT <= (others => '0');
 				
@@ -64,8 +47,10 @@ begin
 				
 				while not endfile(READ_FILE) loop
 					readline(READ_FILE, LINE_v);
-					read(LINE_v, DATA, MORE_DATA);
-					if(not MORE_DATA) then
+					
+					read(LINE_v, DATA, CORRECT_READ);
+					
+					if(not CORRECT_READ) then --stops if there's an error
 						exit;
 					end if;
 					
@@ -77,40 +62,43 @@ begin
 					I := I + 1;
 					RAM(I) <= DATA(7 downto 0);
 					I := I + 1;
+					
 				end loop;
 			
 				file_close(READ_FILE);
-				
-			-- ACCESS TO MEMORY
-			else
-				-- WRITE
-				if(DOP = '1') then 
-					if(DEN = '1') then
-						D_INDEX := to_integer(unsigned(DADDR));
-						
-						if(D_INDEX + 4 < 1024) then
-							RAM(D_INDEX)     <= DIN(31 downto 24);
-							RAM(D_INDEX + 1) <= DIN(23 downto 16);
-							RAM(D_INDEX + 2) <= DIN(15 downto 8);
-							RAM(D_INDEX + 3) <= DIN(7 downto 0);
-						end if;
-						
-					end if;
-				end if;
 			end if;
-			else if(CLK'event and CLK = '0') then
-				if(DOP = '0' and DEN = '1') then
-					D_INDEX := to_integer(unsigned(DADDR));
 		
-					if(D_INDEX + 4 < 1024) then
-						DOUT <= RAM(D_INDEX)     & 
-								RAM(D_INDEX + 1) &
-								RAM(D_INDEX + 2) &
-								RAM(D_INDEX + 3);
-					end if;	
+		
+			-- ACCESS TO MEMORY
+			D_INDEX := to_integer(unsigned(DADDR));
+			
+			if(DEN = '1') then
+				if(DOP = '1' and CLK = '1') then --write on clock rising edge
+					RAM(D_INDEX)     <= DIN(31 downto 24);
+					RAM(D_INDEX + 1) <= DIN(23 downto 16);
+					RAM(D_INDEX + 2) <= DIN(15 downto 8);
+					RAM(D_INDEX + 3) <= DIN(7 downto 0);
+				
+				else if(CLK = '0') then --read data on clock falling edge
+					DOUT <= RAM(D_INDEX)     &
+					        RAM(D_INDEX + 1) &
+							  RAM(D_INDEX + 2) &
+							  RAM(D_INDEX + 3);
 				end if;
 				end if;
+			else
+			
+				DOUT <= (others => '0');
+			end if;
+		
 		end if;
 	end process;
+	
+	-- Read instruction
+	IDATA <= RAM(to_integer(unsigned(IADDR)))     & 
+				RAM(to_integer(unsigned(IADDR)) + 1) & 
+				RAM(to_integer(unsigned(IADDR)) + 2) & 
+				RAM(to_integer(unsigned(IADDR)) + 3) when IEN = '1' else
+				(others => '0');
 
 end Behavioral;
