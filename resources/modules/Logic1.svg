@@ -1,0 +1,54 @@
+<svg id="Livello_14" data-name="Livello 14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 325.57275 204.49998">
+  <title>Logic1</title>
+  <rect x="54.99997" y="54.99998" width="215.57265" height="149" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(130.65662 132.47943)" style="font-size: 15px;font-family: SpaceMono-Bold, Space Mono;font-weight: 700">LOGIC_1</text>
+  <text transform="translate(68.66656 105.16681)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A</text>
+  <text transform="translate(68.66675 163.08313)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">B</text>
+  <text transform="translate(93.32727 74.33331)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A_INV</text>
+  <text transform="translate(191.90005 74.33331)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">B_INV</text>
+  <g>
+    <line y1="105.16687" x2="48.35547" y2="105.16687" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="46.869 107.346 55 105.167 46.869 102.988 46.869 107.346"/>
+  </g>
+  <g>
+    <line y1="163.08325" x2="48.35547" y2="163.08325" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="46.869 165.262 55 163.083 46.869 160.904 46.869 165.262"/>
+  </g>
+  <g>
+    <line x1="111.68701" x2="111.68701" y2="48.35547" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+    <polygon points="109.508 46.869 111.687 55 113.866 46.869 109.508 46.869" style="fill: #29abe2"/>
+  </g>
+  <text transform="translate(22.91013 91.99994)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <text transform="translate(22.91016 150.08325)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <text transform="translate(123.09756 35.75)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <line x1="23.37497" y1="109.29181" x2="31.62497" y2="101.04181" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <line x1="23.37497" y1="167.20827" x2="31.62497" y2="158.95827" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(207.83102 103.04205)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A_AND_B</text>
+  <g>
+    <line x1="270.57275" y1="103.04199" x2="318.92822" y2="103.04199" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="317.442 105.221 325.573 103.042 317.442 100.863 317.442 105.221"/>
+  </g>
+  <text transform="translate(293.48291 89.87518)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <line x1="293.94774" y1="107.16702" x2="302.19774" y2="98.91702" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(215.17526 136.60468)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A_OR_B</text>
+  <g>
+    <line x1="270.57275" y1="136.60461" x2="318.92822" y2="136.60461" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="317.442 138.784 325.573 136.605 317.442 134.426 317.442 138.784"/>
+  </g>
+  <text transform="translate(293.48291 123.43781)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <line x1="293.94774" y1="140.72964" x2="302.19774" y2="132.47964" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(207.83102 173.00006)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A_XOR_B</text>
+  <g>
+    <line x1="270.57275" y1="173" x2="318.92822" y2="173" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="317.442 175.179 325.573 173 317.442 170.821 317.442 175.179"/>
+  </g>
+  <text transform="translate(293.48291 159.83319)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <line x1="293.94774" y1="177.12502" x2="302.19774" y2="168.87502" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <line x1="107.56206" y1="35.74998" x2="115.81206" y2="27.49998" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <g>
+    <line x1="210.25977" x2="210.25977" y2="48.35547" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+    <polygon points="208.081 46.869 210.26 55 212.439 46.869 208.081 46.869" style="fill: #29abe2"/>
+  </g>
+  <text transform="translate(221.6702 35.75)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <line x1="206.13471" y1="35.74998" x2="214.38471" y2="27.49998" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+</svg>
