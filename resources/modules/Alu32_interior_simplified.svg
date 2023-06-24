@@ -1,0 +1,317 @@
+<svg id="Livello_12" data-name="Livello 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 845.21826 706.65417">
+  <title>Alu32_interior_simplified</title>
+  <rect x="69.7277" y="182.95403" width="184.88173" height="493.70014" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+  <g>
+    <g>
+      <polyline points="133.524 79.186 158.357 79.186 196.609 79.186 196.609 89.7 196.609 176.31" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+      <polygon points="194.43 174.823 196.609 182.954 198.788 174.823 194.43 174.823"/>
+    </g>
+    <g>
+      <g>
+        <polygon points="133.524 65.607 133.524 92.765 117.437 106.121 117.437 52.25 133.524 65.607" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+        <g>
+          <text transform="translate(119.55811 71.76491)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">0</text>
+          <text transform="translate(119.55811 93.09828)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">1</text>
+        </g>
+      </g>
+      <g>
+        <g>
+          <line x1="110.79219" y1="65.35121" x2="99.69038" y2="65.35121" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="109.306 63.172 117.437 65.351 109.306 67.53 109.306 63.172"/>
+        </g>
+        <g>
+          <line x1="110.79219" y1="93.02046" x2="99.69038" y2="93.02046" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="109.306 90.842 117.437 93.02 109.306 95.199 109.306 90.842"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g>
+    <polygon points="99.69 93.015 91.02 101.035 51.266 101.035 51.266 85.005 91.02 85.005 99.69 93.015" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+    <text transform="translate(68.96362 98.17218)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  </g>
+  <g>
+    <polygon points="99.69 65.346 91.02 73.366 51.266 73.366 51.266 57.336 91.02 57.336 99.69 65.346" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+    <text transform="translate(68.96362 70.50287)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">0</text>
+  </g>
+  <g>
+    <g>
+      <g>
+        <line x1="28.90817" y1="249.84105" x2="69.40817" y2="249.84105" style="fill: #fff"/>
+        <g>
+          <line x1="28.90818" y1="249.84106" x2="62.76365" y2="249.84106" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="61.278 252.02 69.408 249.841 61.278 247.662 61.278 252.02"/>
+        </g>
+      </g>
+      <g>
+        <line x1="28.90817" y1="302.90157" x2="69.40817" y2="302.90157" style="fill: #fff"/>
+        <g>
+          <line x1="28.90818" y1="302.90155" x2="62.76365" y2="302.90155" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="61.278 305.081 69.408 302.902 61.278 300.723 61.278 305.081"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <g>
+        <line x1="160.09084" y1="142.45403" x2="160.09084" y2="182.95403" style="fill: #fff"/>
+        <g>
+          <line x1="160.09086" y1="142.45403" x2="160.09086" y2="176.3095" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+          <polygon points="157.912 174.823 160.091 182.954 162.27 174.823 157.912 174.823" style="fill: #29abe2"/>
+        </g>
+      </g>
+      <g>
+        <line x1="107.03032" y1="142.45403" x2="107.03032" y2="182.95403" style="fill: #fff"/>
+        <g>
+          <line x1="107.03031" y1="142.45403" x2="107.03031" y2="176.3095" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+          <polygon points="104.851 174.823 107.03 182.954 109.209 174.823 104.851 174.823" style="fill: #29abe2"/>
+        </g>
+      </g>
+    </g>
+    <path d="M1500.48555,662.10323" transform="translate(-1319.2583 -359.20166)" style="fill: #fff"/>
+  </g>
+  <g>
+    <g>
+      <line x1="29.56013" y1="361.54608" x2="70.06013" y2="361.54608" style="fill: #fff"/>
+      <g>
+        <line x1="29.56011" y1="361.54606" x2="63.41558" y2="361.54606" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+        <polygon points="61.929 363.725 70.06 361.546 61.929 359.367 61.929 363.725"/>
+      </g>
+    </g>
+    <g>
+      <line x1="29.56013" y1="414.6066" x2="70.06013" y2="414.6066" style="fill: #fff"/>
+      <g>
+        <line x1="29.56011" y1="414.60661" x2="63.41558" y2="414.60661" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+        <polygon points="61.929 416.786 70.06 414.607 61.929 412.428 61.929 416.786"/>
+      </g>
+    </g>
+  </g>
+  <path d="M1500.48555,823.17968" transform="translate(-1319.2583 -359.20166)" style="fill: #fff"/>
+  <g>
+    <g>
+      <g>
+        <line x1="29.56047" y1="581.77333" x2="70.06047" y2="581.77333" style="fill: #fff"/>
+        <g>
+          <line x1="29.56046" y1="581.77331" x2="63.41593" y2="581.77331" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="61.93 583.952 70.06 581.773 61.93 579.594 61.93 583.952"/>
+        </g>
+      </g>
+      <g>
+        <line x1="29.56047" y1="634.83385" x2="70.06047" y2="634.83385" style="fill: #fff"/>
+        <g>
+          <line x1="29.56046" y1="634.83385" x2="63.41593" y2="634.83385" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="61.93 637.013 70.06 634.834 61.93 632.655 61.93 637.013"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <path d="M1426.28862,919.83858" transform="translate(-1319.2583 -359.20166)" style="fill: #fff"/>
+      <path d="M1426.28862,844.31608" transform="translate(-1319.2583 -359.20166)" style="fill: #fff"/>
+    </g>
+  </g>
+  <g>
+    <line x1="196.60944" y1="676.65417" x2="196.60944" y2="706.65417" style="fill: #fff"/>
+    <g>
+      <line x1="196.60942" y1="676.65417" x2="196.60942" y2="700.00964" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+      <polygon points="194.43 698.524 196.609 706.654 198.788 698.524 194.43 698.524"/>
+    </g>
+  </g>
+  <text transform="translate(185.59332 197.94385)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">CIN</text>
+  <text transform="translate(181.92145 668.79964)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">COUT</text>
+  <text transform="translate(34.89758 479.1041)" style="writing-mode: tb;text-orientation: upright;glyph-orientation-vertical: 0deg;font-size: 12px;font-family: SpaceMono-Regular, Space Mono">...</text>
+  <g>
+    <line x1="274.88708" y1="594.13379" x2="359.44336" y2="594.13379" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="357.957 596.313 366.088 594.134 357.957 591.955 357.957 596.313"/>
+  </g>
+  <g>
+    <line x1="274.88708" y1="368.58521" x2="359.44336" y2="368.58521" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="357.957 370.764 366.088 368.585 357.957 366.406 357.957 370.764"/>
+  </g>
+  <g>
+    <line x1="274.88708" y1="439.39661" x2="359.44336" y2="439.39661" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="357.957 441.576 366.088 439.397 357.957 437.218 357.957 441.576"/>
+  </g>
+  <text transform="translate(235.7493 356.90952)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">S0</text>
+  <text transform="translate(235.74962 432.81699)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">S1</text>
+  <text transform="translate(228.40521 587.23947)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">S31</text>
+  <text transform="translate(6.69144 302.90121)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">B0</text>
+  <text transform="translate(6.69156 251.94699)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A0</text>
+  <text transform="translate(7.34351 414.60681)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">B1</text>
+  <text transform="translate(0.00009 634.83423)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">B31</text>
+  <text transform="translate(0.00009 581.77376)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A31</text>
+  <text transform="translate(7.34363 361.54626)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A1</text>
+  <text transform="translate(615.2818 218.81601)" style="font-size: 12px;fill: #666;font-family: SpaceMono-Regular, Space Mono">A and B / A nor B</text>
+  <text transform="translate(696.06586 237.94382)" style="font-size: 12px;fill: #666;font-family: SpaceMono-Regular, Space Mono">A or B</text>
+  <text transform="translate(329.33984 319.69196) rotate(90)" style="writing-mode: tb;text-orientation: upright;glyph-orientation-vertical: 0deg;font-size: 8.730850219726562px;font-family: SpaceMono-Regular, Space Mono">...</text>
+  <path d="M1390.15568,967.37056" transform="translate(-1319.2583 -359.20166)" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <path d="M1354.15568,856.306" transform="translate(-1319.2583 -359.20166)" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(688.7226 258.75363)" style="font-size: 12px;fill: #666;font-family: SpaceMono-Regular, Space Mono">A xor B</text>
+  <g>
+    <line x1="254.60938" y1="262.69379" x2="741.49097" y2="262.69379" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="740.005 264.873 748.135 262.694 740.005 260.515 740.005 264.873"/>
+  </g>
+  <g>
+    <rect x="366.08783" y="340.26985" width="57" height="282.17927" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+    <text transform="translate(374.0878 482.22888)" style="font-size: 12px;font-family: SpaceMono-Bold, Space Mono;font-weight: 700">NOR_32</text>
+  </g>
+  <g>
+    <line x1="423.08789" y1="482.2287" x2="835.45093" y2="482.2287" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="833.965 484.408 842.095 482.229 833.965 480.05 833.965 484.408"/>
+  </g>
+  <text transform="translate(815.84222 474.44952)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">ZERO</text>
+  <g>
+    <line x1="284.22925" y1="368.58524" x2="284.22925" y2="306.55368" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="286.408 308.04 284.229 299.909 282.05 308.04 286.408 308.04"/>
+  </g>
+  <g>
+    <line x1="298.22925" y1="439.39646" x2="298.22925" y2="306.55368" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="300.408 308.04 298.229 299.909 296.05 308.04 300.408 308.04"/>
+  </g>
+  <g>
+    <line x1="331.56272" y1="594.13373" x2="331.56272" y2="306.55365" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="333.742 308.04 331.563 299.909 329.384 308.04 333.742 308.04"/>
+  </g>
+  <circle cx="331.56266" cy="594.13374" r="2.10808"/>
+  <circle cx="298.22933" cy="439.39646" r="2.10808"/>
+  <circle cx="284.22933" cy="368.58519" r="2.10808"/>
+  <circle cx="331.56266" cy="326.94376" r="2.10808"/>
+  <line x1="278.896" y1="299.90914" x2="336.396" y2="299.90914" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <g>
+    <polyline points="306.335 299.909 306.335 283.272 741.491 283.272" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="740.005 285.451 748.135 283.272 740.005 281.093 740.005 285.451"/>
+  </g>
+  <text transform="translate(293.89606 291.59035)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">S</text>
+  <text transform="translate(732.78568 279.36745)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">S</text>
+  <g>
+    <polyline points="741.491 223.445 459.393 223.445 426.701 223.445 426.701 223.445 254.609 223.445" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="740.005 221.266 748.135 223.445 740.005 225.623 740.005 221.266"/>
+  </g>
+  <g>
+    <polyline points="741.491 243.387 401.42 243.387 254.609 243.387" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="740.005 241.208 748.135 243.387 740.005 245.566 740.005 241.208"/>
+  </g>
+  <g>
+    <line x1="125.48017" y1="19.5334" x2="125.48017" y2="51.67427" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+    <polygon points="123.301 50.188 125.48 58.319 127.659 50.188 123.301 50.188" style="fill: #29abe2"/>
+  </g>
+  <text transform="translate(108.56366 10.19988)" style="font-size: 12px;fill: #29abe2;font-family: SpaceMono-Regular, Space Mono">B_INV</text>
+  <g>
+    <polyline points="697.075 323.926 710.469 323.926 748.135 323.926" style="fill: #fff"/>
+    <g>
+      <polyline points="697.075 323.926 710.469 323.926 741.491 323.926" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+      <polygon points="740.005 326.105 748.135 323.926 740.005 321.747 740.005 326.105"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <polygon points="697.075 310.347 697.075 337.505 680.988 350.862 680.988 296.991 697.075 310.347" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+      <g>
+        <text transform="translate(683.10925 316.50548)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">0</text>
+        <text transform="translate(683.10925 337.83882)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">1</text>
+      </g>
+    </g>
+    <g>
+      <g>
+        <line x1="674.3434" y1="310.09175" x2="663.24159" y2="310.09175" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+        <polygon points="672.857 307.913 680.988 310.092 672.857 312.271 672.857 307.913"/>
+      </g>
+      <g>
+        <line x1="674.3434" y1="337.761" x2="663.24159" y2="337.761" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+        <polygon points="672.857 335.582 680.988 337.761 672.857 339.94 672.857 335.582"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <polygon points="663.242 310.087 654.572 318.107 573.653 318.107 573.653 302.077 654.572 302.077 663.242 310.087" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+    <text transform="translate(578.09668 315.24343)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">0x00000000</text>
+  </g>
+  <g>
+    <polygon points="663.242 337.834 654.572 345.854 573.653 345.854 573.653 329.824 654.572 329.824 663.242 337.834" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+    <text transform="translate(578.09668 342.9905)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">0x00000001</text>
+  </g>
+  <text transform="translate(140.72687 137.51331)" style="font-size: 12px;fill: #29abe2;font-family: SpaceMono-Regular, Space Mono">B_INV</text>
+  <text transform="translate(89.39362 137.51331)" style="font-size: 12px;fill: #29abe2;font-family: SpaceMono-Regular, Space Mono">A_INV</text>
+  <g>
+    <g>
+      <g>
+        <rect x="499.40251" y="374.18955" width="121" height="73.22542" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+        <text transform="translate(519.40259 415.79329)" style="font-size: 12px;font-family: SpaceMono-Bold, Space Mono;font-weight: 700">SLT_CONTROL</text>
+      </g>
+      <g>
+        <line x1="457.40251" y1="388.07634" x2="499.40251" y2="388.07634" style="fill: #e6e6e6"/>
+        <g>
+          <line x1="457.40259" y1="388.07631" x2="492.75806" y2="388.07631" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="491.272 390.255 499.403 388.076 491.272 385.897 491.272 390.255"/>
+        </g>
+      </g>
+      <g>
+        <line x1="457.40251" y1="410.80226" x2="499.40251" y2="410.80226" style="fill: #e6e6e6"/>
+        <g>
+          <line x1="457.40259" y1="410.80227" x2="492.75806" y2="410.80227" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+          <polygon points="491.272 412.981 499.403 410.802 491.272 408.623 491.272 412.981"/>
+        </g>
+      </g>
+      <g>
+        <polyline points="331.563 326.944 438.402 326.944 438.402 433.528 457.402 433.528 492.758 433.528" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+        <polygon points="491.272 435.707 499.402 433.528 491.272 431.349 491.272 435.707"/>
+      </g>
+    </g>
+    <g>
+      <line x1="523.5695" y1="349.22586" x2="523.5695" y2="367.54502" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+      <polygon points="521.391 366.059 523.569 374.19 525.748 366.059 521.391 366.059" style="fill: #29abe2"/>
+    </g>
+    <text transform="translate(457.40222 383.64168)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A31</text>
+    <text transform="translate(457.40259 406.14168)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">B31</text>
+    <text transform="translate(457.40259 428.64168)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">S31</text>
+    <text transform="translate(499.40283 343.80476)" style="font-size: 12px;fill: #29abe2;font-family: SpaceMono-Regular, Space Mono">SIGNED</text>
+    <text transform="translate(626.73584 428.64156)" style="font-size: 12px;fill: #29abe2;font-family: SpaceMono-Regular, Space Mono">LT</text>
+  </g>
+  <g>
+    <polyline points="620.403 410.918 689.031 410.918 689.031 350.828" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+    <polygon points="691.21 352.314 689.031 344.184 686.852 352.314 691.21 352.314" style="fill: #29abe2"/>
+  </g>
+  <g>
+    <line x1="695.6297" y1="197.94376" x2="748.1355" y2="197.94376" style="fill: #fff"/>
+    <g>
+      <line x1="695.62978" y1="197.94376" x2="741.49087" y2="197.94376" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+      <polygon points="740.005 200.123 748.135 197.944 740.005 195.765 740.005 200.123"/>
+    </g>
+  </g>
+  <g>
+    <line x1="776.46303" y1="263.32925" x2="828.96883" y2="263.32925" style="fill: #fff"/>
+    <g>
+      <line x1="776.46311" y1="263.32925" x2="822.3242" y2="263.32925" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+      <polygon points="820.838 265.508 828.969 263.329 820.838 261.15 820.838 265.508"/>
+    </g>
+  </g>
+  <polygon points="776.463 192.754 776.463 324.754 748.133 353.084 748.133 164.424 776.463 192.754" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(750.96313 197.94377)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">000</text>
+  <text transform="translate(750.96313 223.44457)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">001</text>
+  <text transform="translate(750.96313 243.38671)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">010</text>
+  <text transform="translate(750.96313 262.69384)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">011</text>
+  <text transform="translate(750.96313 283.27168)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">100</text>
+  <text transform="translate(750.96313 323.92616)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">101</text>
+  <line x1="776.46303" y1="324.75376" x2="748.13303" y2="353.08376" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <g>
+    <line x1="762.29799" y1="78.2771" x2="762.29799" y2="171.94422" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+    <polygon points="760.119 170.458 762.298 178.589 764.477 170.458 760.119 170.458" style="fill: #29abe2"/>
+  </g>
+  <g>
+    <line x1="753.96303" y1="78.2771" x2="753.96303" y2="163.60929" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+    <polygon points="751.784 162.123 753.963 170.254 756.142 162.123 751.784 162.123" style="fill: #29abe2"/>
+  </g>
+  <g>
+    <line x1="770.96303" y1="78.2771" x2="770.96303" y2="180.60926" style="fill: none;stroke: #29abe2;stroke-miterlimit: 10"/>
+    <polygon points="768.784 179.123 770.963 187.254 773.142 179.123 768.784 179.123" style="fill: #29abe2"/>
+  </g>
+  <text transform="translate(732.78564 194.06612)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">B</text>
+  <text transform="translate(703.41003 319.692)" style="font-size: 12px;fill: #666;font-family: SpaceMono-Regular, Space Mono">A &lt; B</text>
+  <text transform="translate(818.95239 254.7951)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">C</text>
+  <text transform="translate(727.07178 69.94362)" style="font-size: 12px;fill: #29abe2;font-family: SpaceMono-Regular, Space Mono">ALU_OP[2:0]</text>
+  <line x1="254.60943" y1="594.13381" x2="276.42348" y2="594.13381" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <line x1="254.60943" y1="439.39666" x2="276.42348" y2="439.39666" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <line x1="254.26964" y1="368.58524" x2="277.04121" y2="368.58524" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(197.33755 223.44457)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A_AND_B</text>
+  <text transform="translate(204.6818 243.38694)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A_OR_B</text>
+  <text transform="translate(197.33759 262.69405)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">A_XOR_B</text>
+  <text transform="translate(124.67462 426.24655)" style="font-size: 12px;font-family: SpaceMono-Bold, Space Mono;font-weight: 700">AL_BLOCK_32</text>
+</svg>

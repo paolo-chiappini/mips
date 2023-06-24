@@ -1,0 +1,27 @@
+<svg id="Livello_14" data-name="Livello 14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286 180.41634">
+  <title>Drcu</title>
+  <text x="-1009.41907" y="-756.37521"></text>
+  <rect x="55.00002" y="55.00001" width="176" height="124.91634" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(115.45978 119.50027)" style="font-size: 15px;font-family: SpaceMono-Bold, Space Mono;font-weight: 700">DRCU_N</text>
+  <text transform="translate(68.66675 119.00018)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">X</text>
+  <text transform="translate(212.32312 120.18799)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">Y</text>
+  <text transform="translate(120.9679 74.33334)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">ENABLE</text>
+  <g>
+    <line y1="119.00003" x2="48.35547" y2="119.00003" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="46.869 121.179 55 119 46.869 116.821 46.869 121.179"/>
+  </g>
+  <g>
+    <line x1="231" y1="120.18765" x2="279.35547" y2="120.18765" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="277.869 122.367 286 120.188 277.869 118.009 277.869 122.367"/>
+  </g>
+  <g>
+    <line x1="142.99969" x2="142.99969" y2="48.35547" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="140.821 46.869 143 55 145.179 46.869 140.821 46.869"/>
+  </g>
+  <text transform="translate(22.91016 109.00015)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">N</text>
+  <text transform="translate(154.41016 35.75003)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <text transform="translate(256.22253 110.18765)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">N</text>
+  <line x1="23.37502" y1="123.12502" x2="31.62502" y2="114.87502" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <line x1="138.87468" y1="35.75001" x2="147.12468" y2="27.50001" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <line x1="252.56235" y1="124.31268" x2="260.81235" y2="116.06268" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+</svg>

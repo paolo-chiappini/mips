@@ -1,0 +1,40 @@
+<svg id="Livello_14" data-name="Livello 14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.71845 259">
+  <title>CLA4</title>
+  <g>
+    <line x1="134.19763" x2="134.19763" y2="48.35547" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="132.019 46.869 134.198 55 136.377 46.869 132.019 46.869"/>
+  </g>
+  <text transform="translate(143.96198 35.74976)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <line x1="130.0727" y1="35.75002" x2="138.3227" y2="27.50002" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <rect x="56.07227" y="55.00002" width="156.25083" height="149" style="fill: #e6e6e6;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(107.12256 132.87463)" style="font-size: 15px;font-family: SpaceMono-Bold, Space Mono;font-weight: 700">CLA_4</text>
+  <text transform="translate(68.66663 101.10388)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">P</text>
+  <text transform="translate(194.04123 136.9165)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">S</text>
+  <g>
+    <line y1="101.10388" x2="48.35547" y2="101.10388" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="46.869 103.283 55 101.104 46.869 98.925 46.869 103.283"/>
+  </g>
+  <text transform="translate(22.9101 87.93701)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">4</text>
+  <line x1="23.375" y1="105.22889" x2="31.625" y2="96.97889" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(68.66681 173.68646)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">G</text>
+  <g>
+    <line y1="173.68689" x2="48.35547" y2="173.68689" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="46.869 175.866 55 173.687 46.869 171.508 46.869 175.866"/>
+  </g>
+  <text transform="translate(22.9101 160.68683)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">4</text>
+  <line x1="23.375" y1="177.81184" x2="31.625" y2="169.56184" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <g>
+    <line x1="212.71845" y1="132.87498" x2="261.07392" y2="132.87498" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="259.588 135.054 267.718 132.875 259.588 130.696 259.588 135.054"/>
+  </g>
+  <text transform="translate(235.62866 119.70819)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">4</text>
+  <line x1="236.09351" y1="136.99999" x2="244.34351" y2="128.74999" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <g>
+    <line x1="134.19763" y1="204" x2="134.19763" y2="252.35547" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+    <polygon points="132.019 250.869 134.198 259 136.377 250.869 132.019 250.869"/>
+  </g>
+  <text transform="translate(143.96204 239.75012)" style="font-size: 15px;font-family: SpaceMono-Regular, Space Mono">1</text>
+  <line x1="130.07267" y1="239.75002" x2="138.32267" y2="231.50002" style="fill: none;stroke: #000;stroke-miterlimit: 10"/>
+  <text transform="translate(119.50977 196.91637)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">COUT</text>
+  <text transform="translate(123.18164 71.58301)" style="font-size: 12px;font-family: SpaceMono-Regular, Space Mono">CIN</text>
+</svg>
