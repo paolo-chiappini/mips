@@ -31,6 +31,7 @@ begin
 	SIGNAL_CONTROL <= "0110000-1000000000-001" when OPCODE = "000000" and FUNCT = "100000" else -- add
 							  "0110001-1000000000-001" when OPCODE = "000000" and FUNCT = "100010" else -- sub
 							  "0011000-1000000000-001" when OPCODE = "001000" else -- addi
+							  "0011000-1000000000-001" when OPCODE = "001001" else -- addiu
 							  "0110000-0010000000-001" when OPCODE = "000000" and FUNCT = "100100" else -- and
 							  "0110000-0110000000-001" when OPCODE = "000000" and FUNCT = "100101" else -- or
 							  "0110011-0010000000-001" when OPCODE = "000000" and FUNCT = "100111" else -- nor
