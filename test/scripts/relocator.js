@@ -23,7 +23,7 @@ const relocate = (instruction) => {
     if (!is_jal(instruction)) return instruction; 
     
     let addr = instruction.slice(-addr_len); 
-    let dec_addr = (bin_to_dec(addr) - 1) * 4; 
+    let dec_addr = (bin_to_dec(addr)) * 4; 
     let offset = dec_addr - mips_text_addr; 
     
     if (offset < 0) {
