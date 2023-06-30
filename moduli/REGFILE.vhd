@@ -1,14 +1,6 @@
-
-use work.MUX_PKG.ALL;
-
-package REGFILE_PKG is
-  signal REGS_DATA : SLV_ARRAY(0 to 31);
-end package REGFILE_PKG  ; 
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use work.MUX_PKG.ALL;
-use work.REGFILE_PKG.ALL;
 
 entity REGFILE is
     port(
@@ -145,7 +137,5 @@ begin
 		SEL_IN => RT,
 		MUX_OUT => D1
 	);
-	
-	REGS_DATA <= REG_OUT;
 	
 end RTL;
