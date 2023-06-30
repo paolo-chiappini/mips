@@ -1,6 +1,8 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
+use work.REGFILE_PKG.ALL;
+use work.MUX_PKG.ALL;
+
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
@@ -59,9 +61,10 @@ ARCHITECTURE behavior OF TB_TL_AND_MEM IS
    signal DOUT : std_logic_vector(31 downto 0);
    signal DOP : std_logic;
    signal DEN : std_logic;
-
+	signal REGISTERS : SLV_ARRAY(0 to 31) := (others=>(others=>'0'));
+   signal REGS_READY : std_logic := '0';
    -- Clock period definitions
-   constant CLK_period : time := 50 ns;
+   constant CLK_period : time := 100 ns;
  
 BEGIN
  
@@ -102,8 +105,8 @@ BEGIN
    end process;
  
 
-   -- Stimulus process
-   stim_proc: process
+   -- Reset process
+   RST_proc: process
    begin		
 		RST <= '1';
 		wait for 100 ns; 
@@ -111,5 +114,16 @@ BEGIN
 		RST <= '0'; 
       wait;
    end process;
-
+	
+	-- End programm process
+   END_proc: process(CLK)
+   begin		
+		if(IDATA = x"00000000") then
+			REGS_READY <= '1';
+			REGISTERS <= REGS_DATA;
+		else
+			REGS_READY <= '0';
+			REGISTERS <= (others=>(others=>'0'));
+		end if;
+   end process;
 END;
