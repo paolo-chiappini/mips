@@ -67,6 +67,9 @@ function parseELF(filename) {
             return; 
         }
 
+        // skip empty line 
+        if (line.length == 0) return; 
+        
         if (curr_state == null) {
             throw new Error('Invalid ELF file format');
         }
